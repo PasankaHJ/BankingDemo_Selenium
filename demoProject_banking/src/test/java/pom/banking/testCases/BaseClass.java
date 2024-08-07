@@ -5,11 +5,15 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
+import pom.banking.utilities.ReadConfig;
+
 public class BaseClass {
 	
-	public  String baseURL = "https://demo.guru99.com/V4/";
-	public String username = "mngr584545";
-	public String password = "hagAjed";
+	ReadConfig readconfig = new ReadConfig();
+	
+	public  String baseURL = readconfig.getApplicationURL();
+	public String username = readconfig.getUsername();
+	public String password = readconfig.getPassword();
 	public static WebDriver driver;
 	
 	@BeforeClass
